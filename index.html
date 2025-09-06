@@ -1,322 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meenachi S • Portfolio</title>
-  <meta name="description" content="Portfolio of Meenachi S — Biomedical Engineering student, projects, skills, resume, and contact" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meenachi S - Resume</title>
   <style>
-    :root{
-      --bg:#0b0d12;
-      --panel:#121521;
-      --text:#e6e9ef;
-      --muted:#a2acc2;
-      --brand:#7c5cff;
-      --brand-2:#00e8d2;
-      --card:#15192a;
-      --ring:rgba(124,92,255,.45);
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,rgba(124,92,255,.15),transparent),radial-gradient(900px 500px at -10% 10%,rgba(0,232,210,.12),transparent),var(--bg);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1100px,92%);margin:0 auto}
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,13,18,.9),rgba(11,13,18,.6),transparent);backdrop-filter:saturate(160%) blur(8px)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .chip{padding:8px 14px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),#5b38ff);color:white;border:0;box-shadow:var(--shadow)}
-    .btn.secondary{background:#1a2035;border:1px solid rgba(255,255,255,.1);color:#dbe2ff}
-    .btn:focus{outline:2px solid var(--ring);outline-offset:3px}
-
-    /* hero */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:56px 0 24px}
-    .badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.14);padding:8px 12px;border-radius:999px;color:var(--muted)}
-    .title{font-size:clamp(28px,6vw,48px);line-height:1.1;margin:10px 0 12px}
-    .subtitle{color:var(--muted);font-size:clamp(14px,2.4vw,18px)}
-    .hero-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:14px}
-
-    /* sections */
-    section{padding:36px 0}
-    .section-title{font-weight:800;font-size:24px;margin:0 0 16px}
-    .grid{display:grid;gap:16px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.hero-cards{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.nav-links{display:none}.hero-cards{grid-template-columns:1fr}.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
-
-    /* lists */
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#12182b;border:1px solid rgba(255,255,255,.06);color:#d3d9ee}
-    .stack{display:flex;flex-wrap:wrap;gap:10px}
-
-    /* project card */
-    .project{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-    .project .thumb{aspect-ratio:16/9;background:linear-gradient(135deg,rgba(124,92,255,.2),rgba(0,232,210,.2));display:grid;place-items:center;font-weight:700;color:#10131c}
-    .project .body{padding:16px}
-    .project h3{margin:0 0 6px;font-size:18px}
-    .project p{margin:0 0 12px;color:var(--muted)}
-    .meta{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:14px}
-
-    /* timeline */
-    .timeline{position:relative;padding-left:28px}
-    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),transparent)}
-    .t-item{position:relative;margin:0 0 18px}
-    .t-item:before{content:"";position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(124,92,255,.2)}
-    .t-role{font-weight:600}
-    .t-org{color:var(--muted)}
-
-    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
-    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
-
-    /* contact */
-    form{display:grid;gap:10px}
-    input,textarea{background:#0f1425;color:#eaf0ff;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px}
-    input:focus,textarea:focus{outline:2px solid var(--ring);outline-offset:2px}
-    .hint{font-size:12px;color:var(--muted)}
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    header {
+      text-align: center;
+      border-bottom: 3px solid #0077b6;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #0077b6;
+    }
+    .contact p {
+      margin: 4px 0;
+      font-size: 15px;
+    }
+    .contact a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    section {
+      margin-bottom: 25px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #0077b6;
+      border-left: 4px solid #0077b6;
+      padding-left: 8px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    ul li {
+      margin: 6px 0;
+    }
+    .edu-item, .proj-item, .intern-item {
+      margin-bottom: 12px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <a class="chip" href="#top">MEENACHI.S • Portfolio</a>
-        <div class="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-          <button id="themeBtn" class="btn secondary" type="button" aria-label="Toggle theme">🌗 Theme</button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top" class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <span class="badge">Biomedical Engineering • Final Year (B.E)</span>
-        <h1 class="title">Hi, I’m <span style="color:var(--brand-2)">Meenachi S</span> — I build clean code & useful medical tech.</h1>
-        <p class="subtitle">Detail-oriented Biomedical Engineering student currently pursuing the final year of a B.E. program, with a solid foundation in anatomy, medical equipment, and programming (C/C++). Proficient in applying analytical and technical skills to learn and excel in medical coding.</p>
-        <div class="row" style="margin:16px 0 0">
-          <a class="btn" href="#projects">View Projects →</a>
-          <a class="btn secondary" href="resume.pdf" download>Download Resume</a>
-        </div>
-
-        <div style="margin-top:14px;color:var(--muted)">
-          <strong>Contact</strong>
-          <div class="stack" style="margin-top:8px">
-            <span class="pill">📞 9597350086</span>
-            <a class="pill" href="mailto:meenachis898@gmail.com">meenachis898@gmail.com</a>
-            <a class="pill" href="https://www.linkedin.com/in/meenachi-s-016546367" target="_blank">LinkedIn</a>
-            <span class="pill">Srivilliputhur, Virudhunagar, Tamil Nadu</span>
-          </div>
-        </div>
+  <div class="container">
+    <header>
+      <h1>MEENACHI. S</h1>
+      <div class="contact">
+        <p>📞 Phone: <a href="tel:9597350086">9597350086</a></p>
+        <p>✉️ Email: <a href="mailto:meenachis898@gmail.com">meenachis898@gmail.com</a></p>
+        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/meenachi-s-016546367" target="_blank">linkedin.com/in/meenachi-s</a></p>
+        <p>📍 Location: Srivilliputhur, Virudhunagar, Tamilnadu</p>
       </div>
-      <div class="hero-cards">
-        <div class="card">
-          <div class="row">
-            <strong>Education</strong>
-            <span class="pill">B.E. Biomedical Engineering</span>
-          </div>
-          <p style="color:var(--muted);margin:8px 0 0">P.S.R. Engineering College, Sivakasi • Nov 2022 – May 2026 • CGPA: 8.0</p>
-        </div>
-        <div class="card">
-          <div class="row">
-            <strong>Availability</strong>
-            <span class="pill">Open to internships</span>
-          </div>
-          <p class="hint" style="margin:8px 0 0">Interested in medical coding, device QA, and biomedical device software roles.</p>
-        </div>
-      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p>Detail-oriented Biomedical Engineering student currently pursuing the final year of a B.E. program, with a solid foundation in anatomy, medical equipment, and programming skills in C and C++. Proficient in applying analytical and technical skills to learn and excel in medical coding. Adept at collaborating with cross-functional teams to ensure accurate coding and compliance with healthcare documentation standards.</p>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="grid cols-3">
-        <!-- Project 1 -->
-        <article class="project">
-          <div class="thumb">IoT</div>
-          <div class="body">
-            <h3>IoT-Based Monitoring of Chronic Pulmonary Diseases</h3>
-            <p>Developed a non-invasive IoT system for remote monitoring of asthma, COPD, diabetes, and cardiovascular parameters using gas, IR, and heart-rate sensors with Wi‑Fi data transmission to a mobile app.</p>
-            <p style="margin:6px 0 6px;color:var(--muted)"><strong>Quantifiable results:</strong> NIR sensor – 100 mg/dL • Temperature – 35 °C • Heart rate – 98 bpm • CO₂ – 325 mmol</p>
-            <div class="meta">
-              <span class="pill">C • Embedded • IoT</span>
-              <a class="btn secondary" href="#" target="_blank">Repo</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project">
-          <div class="thumb">QA</div>
-          <div class="body">
-            <h3>Medical Equipment Analysis & QA</h3>
-            <p>Hands-on analysis and troubleshooting of critical care and diagnostic equipment during training at KAV Biomedical and Atheenapandiyan Pvt. Ltd.</p>
-            <div class="meta">
-              <span class="pill">Equipment Analysis • Troubleshooting</span>
-              <a class="btn secondary" href="#" target="_blank">Details</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project">
-          <div class="thumb">Coding</div>
-          <div class="body">
-            <h3>Medical Coding Practice & Workshops</h3>
-            <p>Participated in workshops and created practice sets for ICD‑10 & CPT coding. Presented healthcare solutions at Nimdha 2k25 Hackathon.</p>
-            <div class="meta">
-              <span class="pill">ICD‑10 • CPT • Workshops</span>
-              <a class="btn secondary" href="#" target="_blank">Repo</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="stack">
-        <span class="pill">MS Office</span>
-        <span class="pill">C</span>
-        <span class="pill">C++</span>
-        <span class="pill">Anatomy</span>
-        <span class="pill">Medical Equipment Handling</span>
-        <span class="pill">MATLAB</span>
-        <span class="pill">Machine Learning (Anaconda)</span>
-        <span class="pill">Communication</span>
-        <span class="pill">Problem Solving</span>
-        <span class="pill">Adaptability</span>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2 class="section-title">Experience & Internships</h2>
-      <div class="timeline">
-        <div class="t-item">
-          <div class="t-role">Medical Equipment Handling & Troubleshooting</div>
-          <div class="t-org">NTC Gastro and Multi-Speciality Hospital, Madurai — 20 days</div>
-          <p class="hint">Hands-on work with scanning equipment and routine maintenance checks.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-role">Medical Equipment Operation</div>
-          <div class="t-org">Jeyaram Children’s Hospital, Rajapalayam — 11 days</div>
-          <p class="hint">Assisted in equipment operation and patient monitoring workflows.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-role">Critical Care Equipment Training</div>
-          <div class="t-org">KAV Biomedical Equipment Training and Education</div>
-          <p class="hint">Advanced hands-on training in critical care systems and troubleshooting.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2 class="section-title">Education</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <strong>B.E. Biomedical Engineering</strong>
-          <p class="t-org" style="margin:6px 0 0">P.S.R. Engineering College, Sivakasi • Nov 2022 – May 2026</p>
-          <p class="hint">Relevant coursework: Anatomy, Biomedical Instrumentation, Diagnostic & Therapeutic Equipment • CGPA: 8.0</p>
-        </div>
-        <div class="card">
-          <strong>Earlier Education</strong>
-          <p class="hint" style="margin:6px 0 0">HSC — Sacred Heart Girls' Hr. Sec. School, Srivilliputhur (79.4%) • SSLC — Sacred Heart Girls' Hr. Sec. School (75.33%)</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications">
-      <h2 class="section-title">Certifications & Workshops</h2>
-      <ul class="card" style="padding:18px;list-style:none">
-        <li class="hint">Certificate Course in MS Office & C programming</li>
-        <li class="hint">Biomedical engineering workshop — foundational biomedical systems</li>
-        <li class="hint">Workshop at Cyrix — ultrasound machine applications</li>
-        <li class="hint">Workshop at Accura Biomedical Solutions — advanced medical equipment solutions</li>
-        <li class="hint">Nimdha 2k25 Hackathon — presented an innovative healthcare project</li>
-        <li class="hint">KAV Biomedical — critical care equipment hands-on training</li>
-        <li class="hint">Atheenapandiyan Pvt. Ltd. — deep analysis of medical equipment</li>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Technical Skills:</strong> MS Office, C, C++, Anatomy, Medical Equipment Handling</li>
+        <li><strong>Soft Skills:</strong> Communication, Adaptability, Problem-Solving</li>
+        <li><strong>Tools:</strong> MATLAB, Machine Learning (Anaconda)</li>
       </ul>
     </section>
 
-    <!-- LINKS -->
     <section>
-      <h2 class="section-title">Links</h2>
-      <div class="stack">
-        <a class="pill" href="https://github.com/your-username" target="_blank">GitHub</a>
-        <a class="pill" href="https://www.linkedin.com/in/meenachi-s-016546367" target="_blank">LinkedIn</a>
-        <a class="pill" href="#" target="_blank">Portfolio Repo</a>
+      <h2>Education</h2>
+      <div class="edu-item">
+        <p><strong>B.E. Biomedical Engineering</strong> – P.S.R. Engineering College, Sivakasi (Nov 2022 – May 2026)<br>
+        CGPA: 8.0<br>
+        Relevant Coursework: Anatomy, Biomedical Instrumentation, Diagnostic and Therapeutic Equipment</p>
+      </div>
+      <div class="edu-item">
+        <p><strong>HSC</strong> – Sacred Heart Girls’ Hr. Sec. School, Srivilliputhur (2020 – 2022)<br>
+        Percentage: 79.4%</p>
+      </div>
+      <div class="edu-item">
+        <p><strong>SSLC</strong> – Sacred Heart Girls’ Hr. Sec. School, Srivilliputhur (2019 – 2020)<br>
+        Percentage: 75.33%</p>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2 class="section-title">Contact</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <p style="margin:0 0 10px">Want to collaborate or have a role that fits? Reach out:</p>
-          <p class="hint" style="margin:6px 0">Phone: 9597350086<br>Email: <a href="mailto:meenachis898@gmail.com">meenachis898@gmail.com</a><br>Location: Srivilliputhur, Virudhunagar, Tamil Nadu</p>
-          <p class="hint">This demo contact form doesn't send email. Replace with Formspree/Netlify/Mailto integration.</p>
-        </div>
-        <div class="card">
-          <strong>Resume</strong>
-          <p class="hint" style="margin:8px 0 0">Replace <code>resume.pdf</code> in this repo to enable the download button.</p>
-        </div>
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Certificate Course in MS Office and C Programming</li>
+        <li>Rudimentary Biomedical Engineering Workshop</li>
+        <li>Ultrasound Machine Applications – Cyrix</li>
+        <li>Biomedical Devices Workshop – Accura Biomedical Solutions</li>
+        <li>Hackathon (Nimdha 2k25) – Innovative Healthcare Solutions</li>
+        <li>Advanced Critical Care Equipment Hands-On Training – KAV Biomedical</li>
+        <li>Deep Analysis of Medical Equipment – Atheenapandiyan Pvt. Ltd.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="proj-item">
+        <p><strong>IoT-Based Monitoring of Chronic Pulmonary Diseases</strong></p>
+        <ul>
+          <li>Developed a non-invasive IoT system for monitoring asthma, COPD, diabetes, and cardiovascular diseases.</li>
+          <li>Integrated gas, IR, and heart rate sensors; data transmitted via Wi-Fi to mobile app for real-time analysis.</li>
+          <li><strong>Results:</strong> NIR sensor – 100mg/dL, Temperature – 35°C, Heart Rate – 98 BPM, CO₂ sensor – 325 mmol</li>
+        </ul>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container footer-grid">
-      <p>© <span id="year"></span> Meenachi S. Built with ♥️ and vanilla HTML/CSS.</p>
-      <a href="#top" class="pill">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function handleSubmit(e){
-      e.preventDefault();
-      const msg = document.getElementById('formMsg');
-      msg.textContent = 'Thanks! This demo form doesn\'t send email. You can connect it to Formspree or Netlify Forms.';
-      return false;
-    }
-    const themeBtn = document.getElementById('themeBtn');
-    themeBtn?.addEventListener('click',()=>{
-      const root = document.documentElement;
-      const light = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0b0d12';
-      if(light){
-        root.style.setProperty('--bg','#f6f8ff');
-        root.style.setProperty('--panel','#ffffff');
-        root.style.setProperty('--text','#0f1320');
-        root.style.setProperty('--muted','#52607a');
-        root.style.setProperty('--card','#ffffff');
-        document.body.style.background = 'radial-gradient(1000px 500px at 80% -10%, rgba(124,92,255,.15), transparent), radial-gradient(800px 400px at -10% 10%, rgba(0,232,210,.12), transparent), var(--bg)';
-      }else{
-        root.style.setProperty('--bg','#0b0d12');
-        root.style.setProperty('--panel','#121521');
-        root.style.setProperty('--text','#e6e9ef');
-        root.style.setProperty('--muted','#a2acc2');
-        root.style.setProperty('--card','#15192a');
-        document.body.style.background = 'radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.15), transparent), radial-gradient(900px 500px at -10% 10%, rgba(0,232,210,.12), transparent), var(--bg)';
-      }
-    });
-  </script>
+    <section>
+      <h2>Internships</h2>
+      <div class="intern-item">
+        <p><strong>NTC Gastro and Multi-Speciality Hospital, Madurai</strong> – Equipment Handling & Troubleshooting (20 days)</p>
+      </div>
+      <div class="intern-item">
+        <p><strong>Jeyaram Children’s Hospital, Rajapalayam</strong> – Medical Equipment Handling & Operation (11 days)</p>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
