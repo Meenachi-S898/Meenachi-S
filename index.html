@@ -6,55 +6,72 @@
   <title>Meenachi S - Resume</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f0f2f5;
       color: #333;
     }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
+    .resume {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      max-width: 1000px;
+      margin: 30px auto;
       background: #fff;
-      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
-    header {
-      text-align: center;
-      border-bottom: 3px solid #0077b6;
-      padding-bottom: 15px;
-      margin-bottom: 25px;
+    /* Sidebar */
+    .sidebar {
+      background: linear-gradient(180deg, #0077b6, #0096c7);
+      color: #fff;
+      padding: 30px 20px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #0077b6;
+    .sidebar h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
     }
-    .contact p {
-      margin: 4px 0;
-      font-size: 15px;
+    .sidebar p {
+      margin: 5px 0;
+      font-size: 14px;
     }
-    .contact a {
-      color: #0077b6;
+    .sidebar a {
+      color: #fff;
       text-decoration: none;
     }
-    section {
+    .sidebar h2 {
+      margin-top: 25px;
+      font-size: 18px;
+      border-bottom: 2px solid rgba(255,255,255,0.4);
+      padding-bottom: 6px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .sidebar ul li {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    /* Main Content */
+    .main {
+      padding: 30px;
+    }
+    .main section {
       margin-bottom: 25px;
     }
-    h2 {
+    .main h2 {
       font-size: 20px;
-      margin-bottom: 10px;
       color: #0077b6;
       border-left: 4px solid #0077b6;
-      padding-left: 8px;
+      padding-left: 10px;
+      margin-bottom: 12px;
     }
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-    ul li {
-      margin: 6px 0;
+    .main p, .main li {
+      font-size: 15px;
+      line-height: 1.5;
     }
     .edu-item, .proj-item, .intern-item {
       margin-bottom: 12px;
@@ -62,82 +79,82 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>MEENACHI. S</h1>
-      <div class="contact">
-        <p>📞 Phone: <a href="tel:9597350086">9597350086</a></p>
-        <p>✉️ Email: <a href="mailto:meenachis898@gmail.com">meenachis898@gmail.com</a></p>
-        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/meenachi-s-016546367" target="_blank">linkedin.com/in/meenachi-s</a></p>
-        <p>📍 Location: Srivilliputhur, Virudhunagar, Tamilnadu</p>
-      </div>
-    </header>
+  <div class="resume">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h1>Meenachi S</h1>
+      <p>📞 <a href="tel:9597350086">9597350086</a></p>
+      <p>✉️ <a href="mailto:meenachis898@gmail.com">meenachis898@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/meenachi-s-016546367" target="_blank">LinkedIn</a></p>
+      <p>📍 Srivilliputhur, Tamilnadu</p>
 
-    <section>
-      <h2>Professional Summary</h2>
-      <p>Detail-oriented Biomedical Engineering student currently pursuing the final year of a B.E. program, with a solid foundation in anatomy, medical equipment, and programming skills in C and C++. Proficient in applying analytical and technical skills to learn and excel in medical coding. Adept at collaborating with cross-functional teams to ensure accurate coding and compliance with healthcare documentation standards.</p>
-    </section>
-
-    <section>
       <h2>Skills</h2>
       <ul>
-        <li><strong>Technical Skills:</strong> MS Office, C, C++, Anatomy, Medical Equipment Handling</li>
-        <li><strong>Soft Skills:</strong> Communication, Adaptability, Problem-Solving</li>
-        <li><strong>Tools:</strong> MATLAB, Machine Learning (Anaconda)</li>
+        <li>MS Office, C, C++</li>
+        <li>Anatomy, Medical Equipment</li>
+        <li>MATLAB, Machine Learning</li>
+        <li>Communication, Problem Solving</li>
       </ul>
-    </section>
 
-    <section>
-      <h2>Education</h2>
-      <div class="edu-item">
-        <p><strong>B.E. Biomedical Engineering</strong> – P.S.R. Engineering College, Sivakasi (Nov 2022 – May 2026)<br>
-        CGPA: 8.0<br>
-        Relevant Coursework: Anatomy, Biomedical Instrumentation, Diagnostic and Therapeutic Equipment</p>
-      </div>
-      <div class="edu-item">
-        <p><strong>HSC</strong> – Sacred Heart Girls’ Hr. Sec. School, Srivilliputhur (2020 – 2022)<br>
-        Percentage: 79.4%</p>
-      </div>
-      <div class="edu-item">
-        <p><strong>SSLC</strong> – Sacred Heart Girls’ Hr. Sec. School, Srivilliputhur (2019 – 2020)<br>
-        Percentage: 75.33%</p>
-      </div>
-    </section>
-
-    <section>
       <h2>Certifications</h2>
       <ul>
-        <li>Certificate Course in MS Office and C Programming</li>
-        <li>Rudimentary Biomedical Engineering Workshop</li>
-        <li>Ultrasound Machine Applications – Cyrix</li>
-        <li>Biomedical Devices Workshop – Accura Biomedical Solutions</li>
-        <li>Hackathon (Nimdha 2k25) – Innovative Healthcare Solutions</li>
-        <li>Advanced Critical Care Equipment Hands-On Training – KAV Biomedical</li>
-        <li>Deep Analysis of Medical Equipment – Atheenapandiyan Pvt. Ltd.</li>
+        <li>MS Office & C Programming</li>
+        <li>Biomedical Workshop</li>
+        <li>Ultrasound Machine (Cyrix)</li>
+        <li>Accura Biomedical Solutions</li>
+        <li>Nimdha 2k25 Hackathon</li>
+        <li>KAV Biomedical Training</li>
+        <li>Medical Equipment Analysis</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="proj-item">
-        <p><strong>IoT-Based Monitoring of Chronic Pulmonary Diseases</strong></p>
-        <ul>
-          <li>Developed a non-invasive IoT system for monitoring asthma, COPD, diabetes, and cardiovascular diseases.</li>
-          <li>Integrated gas, IR, and heart rate sensors; data transmitted via Wi-Fi to mobile app for real-time analysis.</li>
-          <li><strong>Results:</strong> NIR sensor – 100mg/dL, Temperature – 35°C, Heart Rate – 98 BPM, CO₂ sensor – 325 mmol</li>
-        </ul>
-      </div>
-    </section>
+    <!-- Main Content -->
+    <div class="main">
+      <section>
+        <h2>Professional Summary</h2>
+        <p>Detail-oriented Biomedical Engineering student currently pursuing the final year of a B.E. program, with a strong foundation in anatomy, medical equipment, and coding in C & C++. Skilled in medical coding, equipment handling, and healthcare compliance, with a passion for innovative biomedical solutions.</p>
+      </section>
 
-    <section>
-      <h2>Internships</h2>
-      <div class="intern-item">
-        <p><strong>NTC Gastro and Multi-Speciality Hospital, Madurai</strong> – Equipment Handling & Troubleshooting (20 days)</p>
-      </div>
-      <div class="intern-item">
-        <p><strong>Jeyaram Children’s Hospital, Rajapalayam</strong> – Medical Equipment Handling & Operation (11 days)</p>
-      </div>
-    </section>
+      <section>
+        <h2>Education</h2>
+        <div class="edu-item">
+          <p><strong>B.E. Biomedical Engineering</strong> – P.S.R. Engineering College (2022–2026)<br>
+          CGPA: 8.0 | Coursework: Anatomy, Biomedical Instrumentation</p>
+        </div>
+        <div class="edu-item">
+          <p><strong>HSC</strong> – Sacred Heart Girls’ Hr. Sec. School (2020–2022)<br>
+          Percentage: 79.4%</p>
+        </div>
+        <div class="edu-item">
+          <p><strong>SSLC</strong> – Sacred Heart Girls’ Hr. Sec. School (2019–2020)<br>
+          Percentage: 75.33%</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div class="proj-item">
+          <p><strong>IoT-Based Monitoring of Chronic Pulmonary Diseases</strong></p>
+          <ul>
+            <li>Designed non-invasive IoT system for asthma, COPD, diabetes, and heart disease monitoring.</li>
+            <li>Integrated gas, IR, and heart rate sensors with Wi-Fi transmission.</li>
+            <li><strong>Results:</strong> NIR: 100 mg/dL, Temp: 35 °C, HR: 98 BPM, CO₂: 325 mmol</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Internships</h2>
+        <div class="intern-item">
+          <p><strong>NTC Gastro & Multi-Speciality Hospital, Madurai</strong><br>
+          Equipment Handling & Troubleshooting – 20 days</p>
+        </div>
+        <div class="intern-item">
+          <p><strong>Jeyaram Children’s Hospital, Rajapalayam</strong><br>
+          Medical Equipment Handling & Operation – 11 days</p>
+        </div>
+      </section>
+    </div>
   </div>
 </body>
 </html>
